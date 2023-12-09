@@ -157,12 +157,12 @@ module BBCode
       result_str = result.map(&:to_s).join('').strip
 
       # extracted from bb-ruby, which extracted it from Rails ActionPack
-      start_tag = '<p>'
+      start_tag = '<span>'
       result_str.gsub!(/\r\n?/, "\n")                   # \r\n and \r => \n
       result_str.gsub!(/\n\n+/, "</p>\n\n#{start_tag}") # 2+ newline  => paragraph
       #result_str.gsub!(/([^\n>]\n)(?=[^\n<])/, '\1<br>')# 1 newline   => br
       result_str.insert 0, start_tag
-      result_str << '</p>'
+      result_str << '</span>'
     rescue BBCode::ParseError => e
       if raise_error
         raise e
