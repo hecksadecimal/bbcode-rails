@@ -63,7 +63,7 @@ module BBCode
           tmp = ""
           # We iterate through the string either until the end or if we find a [
           while not str[pos] =~ tag_open and pos < str.length
-            tmp << str[pos].downcase
+            tmp << str[pos]
             pos = pos.next
           end
           current_tag << tmp
