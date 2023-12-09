@@ -157,7 +157,7 @@ module BBCode
       result_str = result.map(&:to_s).join('').strip
 
       # extracted from bb-ruby, which extracted it from Rails ActionPack
-      start_tag = '<span>'
+      start_tag = '<span class="grow">'
       result_str.gsub!(/\r\n?/, "\n")                   # \r\n and \r => \n
       result_str.gsub!(/\n\n+/, "</p>\n\n#{start_tag}") # 2+ newline  => paragraph
       #result_str.gsub!(/([^\n>]\n)(?=[^\n<])/, '\1<br>')# 1 newline   => br
