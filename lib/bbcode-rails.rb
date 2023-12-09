@@ -81,7 +81,7 @@ module BBCode
               len = tag.name.length
               if str[pos+1,len] == tag.name and str[pos+len+1] =~ tag_close
                 # If it's the current one?
-                if current_tag.downcase == tag
+                if current_tag == tag
                   current_tag = tag.parent
                   pos += len+1
                   broke_out = true
